@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./partials/head %>
+  </head>
+<body>
+<% include ./partials/header %>
+
+<ul>
+    <% for(var i=0; i<requests.length; i++) { %>
+      <% if( requests[i].title.indexOf('I need to organize these files')>=0 ){ %>
+        <li style="font-size: 12px">
+      			<a href="/browse?folder=<%= requests[i].title.split('s: [')[1] %>">
+      			<h4><%= requests[i].title %> <h4>
+            <p> <%= requests[i].content %> </p>
+      			</a>		
+        </li>
+      <% } %> 
+    <% } %>
+</ul>
+
+
+<% include ./partials/footer %>
+</body>
+</html>

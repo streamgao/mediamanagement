@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./partials/head %>
+    <link href="stylesheets/dragandsort.css" rel="stylesheet" type="text/css" />
+    <!--script type="text/javascript" src="/socket.io/socket.io.js"></script-->
+
+    <script type="text/javascript" src="/javascripts/browse.js"></script>
+  </head>
+<body>
+<% include ./partials/header %>
+<!--% requests %-->
+<div class="container-fluid">
+    <nav class="container">
+            <button type="button" id='arrange' class="btn btn-primary">
+                    <i class="glyphicon glyphicon-sort"></i>
+                    <span>Arrange Files</span>
+            </button>
+            <button type="button" id='done' class="btn hide">
+                    <i class="glyphicon glyphicon-ok"></i>
+                    <span>Done</span>
+            </button>
+            <button type="button" id='done' class="btn hide">
+                    <i class="glyphicon glyphicon-ok"></i>
+                    <span>Confirm Delete</span>
+            </button>
+    </nav>
+
+    <div class="albums container hide">
+            <div class="album" id="keep" droppable="true">
+                <h3> <span class="glyphicon glyphicon-folder-close" /> Files to Keep</h3></div>
+            <div class="album" id="trash" droppable="true">
+                <h3>  <span class="glyphicon glyphicon-trash" /> Files to Trash</h3>
+            </div>
+            <!--div class="album" id="drop_3" droppable="true"><h2>Album 3</h2></div-->
+    </div>
+    <div style="clear:both"></div>
+
+    <div class="gallery">
+            <% for(var i=0; i<urllist.length; i++) { %>
+                <a draggable="true" id="<%= i %>" >
+                    <img src="<%= urllist[i].url %>" />
+                    <span> <%= urllist[i].public_id.split('/').pop() %></span>
+                </a>
+            <% } %>
+    </div>
+</div>
+
+
+
+<!-- The blueimp Gallery widget -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+
+    <!--script src="javascripts/dragandsort.js"></script-->
+  </body>
+</html>

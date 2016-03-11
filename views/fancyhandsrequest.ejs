@@ -1,0 +1,105 @@
+<style>
+
+.indication{
+  font-size: 10px !important;
+}
+
+.col-lg-5{
+  clear:right;
+}
+/*encType="multipart/form-data" */
+</style>
+
+<form action='/submitfancyhands' method="POST"  class="container" style="margin:10px">	
+  <h3>Do you need any help to sort your files? Yes! </h3>
+  I want to sort photos under the following standards:
+  <div class="row" style="margin-left:-15px;" >
+  <div class="col-lg-7">
+
+    <div class="col-lg-12">
+      <div class="input-group">
+        <span class="input-group-addon">
+          <input type="checkbox" name="req1">
+        </span>
+        <span class="input-group-addon indication">Delete photos with duplication of </span>
+        <input type="text" class="form-control" name="req1msg" placeholder="the same sceneary">
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-10 -->
+
+    <div class="col-lg-12">
+      <div class="input-group">
+        <span class="input-group-addon">
+          <input type="checkbox" name="req2" aria-label="...">
+        </span>
+        <span class="input-group-addon indication">Keep images only :</span>
+        <input type="text" class="form-control" name="req2msg" aria-label="..."  placeholder="clear, notes on paper only">
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-10 -->
+
+    
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <input type="checkbox" name="req3" aria-label="...">
+          </span>
+          <span class="input-group-addon indication"> Keep photos with the best posture of </span>
+          <input type="text" class="form-control" name="req3msg" aria-label="..." placeholder="me">
+        </div><!-- /input-group -->
+      </div><!-- /.col-lg-8 -->
+      
+      <div class="col-lg-6">
+          <div class="input-group">
+          <span class="input-group-addon indication">Photo of him</span> 
+          <input class="form-control" type="file" name="bestpostureimg"></input>    
+          </div>
+      </div><!-- /.col-lg-5 -->
+    
+      <div class="col-lg-6">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <input type="checkbox" name="req4" aria-label="...">
+          </span>
+          <span class="input-group-addon indication">Delete photos that contains this</span>
+          <input type="text" class="form-control" name="req4msg" aria-label="..."  placeholder="person">
+        </div><!-- /input-group -->
+      </div>
+
+    <div class="col-lg-6">
+      <div class="input-group">
+          <span class="input-group-addon indication">Photo of him</span> 
+          <input class="form-control"  type="file" name="deleteimg"></input> 
+      </div>
+    </div>
+
+    <div class="col-lg-12">
+      <div class="input-group">
+        <span class="input-group-addon indication">Other requirements</span>
+        <input class="form-control" type="text" name="extra" placeholder="put your extra requirements here">
+      </div>
+    </div>
+
+    
+      <div class="col-lg-5">
+          <div class="input-group">
+            <span class="input-group-addon indication">Create A Folder</span>
+            <input type="text" class="form-control" aria-label="..."  name="foldername" placeholder="Floder Name">
+          </div>
+      </div>
+
+      <div class="col-lg-5">
+          <div class="input-group">
+            <span class="input-group-addon indication">Price $</span>
+            <input type="text" class="form-control" name="bid" placeholder="1.00">
+          </div>
+      </div>
+    
+  </div>
+  </div><!-- /.row -->
+
+<br>
+      <button type="submit" id="submitfancyhands" class="btn btn-warning delete">
+              <i class="glyphicon glyphicon-ok"></i>
+              <span>Submit All The Requirement!</span>
+      </button>
+  <!--input type="submit" class="form-control col-lg-5" value="Submit Requirement!"--> 
+</form>
