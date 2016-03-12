@@ -35,7 +35,7 @@ var listurls=[];
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'restage' });
+  res.render('fileupload', { title: 'restage' });
 });
 
 router.get('/index', function(req, res) {
